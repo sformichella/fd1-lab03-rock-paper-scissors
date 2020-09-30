@@ -101,6 +101,10 @@ function handleDraw() {
 resetButton.addEventListener('click', resetButtonHandler);
 
 function resetButtonHandler() {
+    wins = 0;
+    draws = 0;
+    total = 0;
+
     winsSpan.textContent = 'Wins: 0';
     lossesSpan.textContent = 'Losses: 0';
     drawsSpan.textContent = 'Draws: 0';
