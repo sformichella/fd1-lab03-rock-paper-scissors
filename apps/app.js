@@ -11,8 +11,9 @@ let drawsSpan = document.getElementById('draws');
 let winPercent = document.getElementById('win-percentage');
 
 let submitButton = document.getElementById('submit-button');
+let resetButton = document.getElementById('reset-button');
 
-let messageElement = document.getElementById('message');
+let messageElement = document.getElementById('win-or-lose-message');
 
 
 // Initialize State
@@ -51,6 +52,8 @@ function submitButtonHandler() {
     updateDOM()
 }
 
+
+
 function updateDOM() {
     winsSpan.textContent = `Wins: ${wins}`;
     lossesSpan.textContent = `Losses: ${total - wins - draws}`;
@@ -58,16 +61,35 @@ function updateDOM() {
     winPercent.textContent = `Win-percentage: ${Math.floor(wins/total * 100)}%`;
 }
 
+
+
 function handleUserWins() {
     wins ++;
     messageElement.textContent = "Congratulations! You've won!";
 }
 
+
+
 function handleUserLoses() {
     messageElement.textContent = 'You Lost. Try again?';
 }
 
+
+
 function handleDraw() {
     draws ++;
     messageElement.textContent = 'Whoa! A Draw!';
+}
+
+
+
+resetButton.addEventListener('click', resetButtonHandler);
+
+function resetButtonHandler() {
+    winsSpan.textContent = 'Wins: 0';
+    lossesSpan.textContent = 'Losses: 0';
+    drawsSpan.textContent = 'Draws: 0';
+    winPercent.textContent = 'Win-percentage: 0';
+
+    messageElement.textContent = '';
 }

@@ -15,15 +15,18 @@
 <body>
 
     <header>
-        Rock Paper Scissors
+        <label>
+            <p>Rock Paper Scissors</p>
+            <p class="small-text">Click to Reset</p>
+            <button id="reset-button" class="hidden"></button>
+        </label>
     </header>
 
     <main>
 
        <section class="game-section">
+           
             <div class="choices"><!-- Begin Choices -->
-
-                
                     <label>
                         <input
                             type="radio"
@@ -54,8 +57,9 @@
                 </div>
             </div> <!-- End of Choices section -->
 
-            <p>
-                <span id="message"></span>
+            <p class="message-area">
+
+                <span id="win-or-lose-message"></span>
             </p>
 
         </section>

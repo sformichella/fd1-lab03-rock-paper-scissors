@@ -14,18 +14,43 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
+    background-color: lightgray;
 }
 
 header {
+    margin: 20px;
+
     padding: 50px;
     font-size: 5em;
     font-weight: 500;
+    
+    border: solid 1px darkgray;
+    border-radius: 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header p {
+    padding: 10px;
+}
+
+.small-text {
+    font-size: 0.2em;
+    text-align: center;
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    padding: 50px;
+    background-color: aliceblue;
+    border: solid 1px darkgray;
+    border-radius: 1em;
 }
 
 main section {
@@ -55,14 +80,28 @@ input[type="radio"]:checked + img {
 }
 
 .game-section {
+    width: 100%;
+
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
-p {
+.message-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 250px;
+
+    font-weight: 700;
+    font-size: 2em;
+}
+
+p span {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
 }
