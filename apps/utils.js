@@ -13,7 +13,6 @@ export function getRandomThrow() {
 };
 
 
-
 export function doesUserWin(playerOneThrow, playerTwoThrow) {
     const throwToNum = { 'rock':0, 'paper':1, 'scissors':2};
 
