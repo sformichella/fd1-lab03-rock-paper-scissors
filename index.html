@@ -19,45 +19,54 @@
     </header>
 
     <main>
-       
-        <section id="rock">
-            <label>
-                <input
-                    type="radio"
-                    name="options"
-                    value="rock"
-                />
-                <img src="./assets/rock.png" alt="a gray stone">
-            </label>
-        </section>
 
-        <section id="paper-and-scissors">
-            <label>
-                <input
-                    type="radio"
-                    name="options"
-                    value="paper"
-                />
-                <img src="./assets/paper.png" alt="a piece of white paper">
-            </label>
+       <section class="game-section">
+            <div class="choices"><!-- Begin Choices -->
 
-            <label>
-                <input
-                    type="radio"
-                    name="options"
-                    value="scissors"
-                />
-                <img src="./assets/scissors.png" alt="a pair of scissors">
-            </label>
+                
+                    <label>
+                        <input
+                            type="radio"
+                            name="options"
+                            value="rock"
+                        />
+                        <img src="./assets/rock.png" alt="a gray stone">
+                    </label>
+
+                <div id="paper-and-scissors-div">
+                    <label>
+                        <input
+                            type="radio"
+                            name="options"
+                            value="paper"
+                        />
+                        <img src="./assets/paper.png" alt="a piece of white paper">
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="options"
+                            value="scissors"
+                        />
+                        <img src="./assets/scissors.png" alt="a pair of scissors">
+                    </label>
+                </div>
+            </div> <!-- End of Choices section -->
+
+            <p>
+                <span id="message"></span>
+            </p>
+
         </section>
 
         <button id="submit-button">Submit!</button>
 
         <section id="stats">
-            <span id="wins">Wins: </span>
-            <span id="losses">Losses: </span>
-            <span id="draws">Draws: </span>
-            <span id="win-percentage">Win-percentage: </span>
+            <span id="wins">Wins: 0</span>
+            <span id="losses">Losses: 0</span>
+            <span id="draws">Draws: 0</span>
+            <span id="win-percentage">Win-percentage: 0%</span>
         </section>
 
     </main>

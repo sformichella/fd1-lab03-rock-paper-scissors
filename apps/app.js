@@ -1,4 +1,5 @@
 import {
+    doesUserWin,
     getRandomThrow
 } from './utils.js'
 
@@ -11,22 +12,62 @@ let winPercent = document.getElementById('win-percentage');
 
 let submitButton = document.getElementById('submit-button');
 
+let messageElement = document.getElementById('message');
+
 
 // Initialize State
 
-let wins = 0
-let total = 0
+let wins = 0;
+let draws = 0;
+let total = 0;
 
 
 // Click Handlers
 
-submitButton.addEventListener('click', submitButtonHandler)
+submitButton.addEventListener('click', submitButtonHandler);
 
 function submitButtonHandler() {
     const computerThrow = getRandomThrow();
+    console.log(computerThrow);
 
     const checkedChoice = document.querySelector(':checked');
     const userThrow = checkedChoice.value;
 
     const winOrLose = doesUserWin(userThrow, computerThrow);
+
+
+    if (winOrLose === 'win' ) {
+        handleUserWins();
+    };
+    if (winOrLose === 'loss') {
+        handleUserLoses();
+    }
+    if (winOrLose === 'draw') {
+        handleDraw();
+    }
+
+    total ++;
+
+    updateDOM()
+}
+
+function updateDOM() {
+    winsSpan.textContent = `Wins: ${wins}`;
+    lossesSpan.textContent = `Losses: ${total - wins - draws}`;
+    drawsSpan.textContent = `Draws: ${draws}`;
+    winPercent.textContent = `Win-percentage: ${Math.floor(wins/total * 100)}%`;
+}
+
+function handleUserWins() {
+    wins ++;
+    messageElement.textContent = "Congratulations! You've won!";
+}
+
+function handleUserLoses() {
+    messageElement.textContent = 'You Lost. Try again?';
+}
+
+function handleDraw() {
+    draws ++;
+    messageElement.textContent = 'Whoa! A Draw!';
 }

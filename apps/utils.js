@@ -1,5 +1,5 @@
 export function getRandomThrow() {
-    let randomNumber = Math.floor(Math.random() * 2);
+    let randomNumber = Math.floor(Math.random() * 2 + 0.5);
 
     if (randomNumber === 0) {
         return 'rock';
@@ -10,9 +10,8 @@ export function getRandomThrow() {
     if (randomNumber === 2) {
         return 'scissors';
     };
-
-    return 'Somethings broken!'
 };
+
 
 
 export function doesUserWin(playerOneThrow, playerTwoThrow) {
@@ -25,8 +24,8 @@ export function doesUserWin(playerOneThrow, playerTwoThrow) {
     if (playerOneThrow === playerTwoThrow) {
         return 'draw';
     }
-    else if ((playerOneNum + 1)%3 === playerTwoNum) {
-        return 'loss'
+    else if ( (playerOneNum + 1) % 3 === playerTwoNum) {
+        return 'loss';
     }
     else {
         return 'win';
