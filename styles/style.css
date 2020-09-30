@@ -15,7 +15,7 @@ body {
     justify-content: flex-start;
     align-items: center;
 
-    background-color: lightgray;
+    background-color: darkcyan;
 }
 
 header {
@@ -25,8 +25,9 @@ header {
     font-size: 5em;
     font-weight: 500;
     
-    border: solid 1px darkgray;
+    border: solid 1px black;
     border-radius: 1em;
+    background-color: white;
 
     display: flex;
     flex-direction: column;
@@ -48,9 +49,11 @@ main {
     align-items: center;
 
     padding: 50px;
-    background-color: aliceblue;
+    background-color: ghostwhite;
     border: solid 1px darkgray;
     border-radius: 1em;
+
+    height: 500px;
 }
 
 main section {
@@ -92,10 +95,14 @@ input[type="radio"]:checked + img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 250px;
+
+    width: 300px;
+    height: 300px;
 
     font-weight: 700;
-    font-size: 2em;
+    font-size: 1.9em;
+
+    padding: 20px;
 }
 
 p span {

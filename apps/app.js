@@ -14,6 +14,7 @@ let submitButton = document.getElementById('submit-button');
 let resetButton = document.getElementById('reset-button');
 
 let messageElement = document.getElementById('win-or-lose-message');
+let computerMessage = document.getElementById('computer-throw-message');
 
 
 // Initialize State
@@ -21,6 +22,7 @@ let messageElement = document.getElementById('win-or-lose-message');
 let wins = 0;
 let draws = 0;
 let total = 0;
+
 
 
 // Click Handlers
@@ -49,6 +51,7 @@ function submitButtonHandler() {
 
     total ++;
 
+    displayComputerThrow(computerThrow);
     updateDOM()
 }
 
@@ -61,6 +64,18 @@ function updateDOM() {
     winPercent.textContent = `Win-percentage: ${Math.floor(wins/total * 100)}%`;
 }
 
+
+function displayComputerThrow(computerChoice) {
+    if (computerChoice === 'rock') {
+        computerMessage.textContent = 'Computer plays... Rock!';
+    }
+    if (computerChoice === 'paper') {
+        computerMessage.textContent = 'Computer plays... Paper!';
+    }
+    if (computerChoice === 'scissors') {
+        computerMessage.textContent = 'Computer plays... Scissors!';
+    }
+}
 
 
 function handleUserWins() {
@@ -89,7 +104,8 @@ function resetButtonHandler() {
     winsSpan.textContent = 'Wins: 0';
     lossesSpan.textContent = 'Losses: 0';
     drawsSpan.textContent = 'Draws: 0';
-    winPercent.textContent = 'Win-percentage: 0';
+    winPercent.textContent = 'Win-percentage: 0%';
 
     messageElement.textContent = '';
+    computerMessage.textContent = '';
 }

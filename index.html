@@ -25,13 +25,14 @@
     <main>
 
        <section class="game-section">
-           
+
             <div class="choices"><!-- Begin Choices -->
                     <label>
                         <input
                             type="radio"
                             name="options"
                             value="rock"
+                            checked
                         />
                         <img src="./assets/rock.png" alt="a gray stone">
                     </label>
@@ -58,7 +59,7 @@
             </div> <!-- End of Choices section -->
 
             <p class="message-area">
-
+                <span id="computer-throw-message"></span>
                 <span id="win-or-lose-message"></span>
             </p>
 
