@@ -1,5 +1,5 @@
 export function getRandomThrow() {
-    let randomNumber = Math.floor(Math.random() * 2 + 0.5);
+    let randomNumber = Math.floor(Math.random() * 3);
 
     if (randomNumber === 0) {
         return 'rock';
@@ -14,10 +14,11 @@ export function getRandomThrow() {
 
 
 export function doesUserWin(playerOneThrow, playerTwoThrow) {
-    const throwToNum = { 'rock':0, 'paper':1, 'scissors':2};
 
-    const playerOneNum = throwToNum[playerOneThrow];
-    const playerTwoNum = throwToNum[playerTwoThrow];
+    const myArray = ['rock', 'paper', 'scissors'];
+
+    const playerOneNum = myArray.indexOf(playerOneThrow);
+    const playerTwoNum = myArray.indexOf(playerTwoThrow);
 
 
     if (playerOneThrow === playerTwoThrow) {
