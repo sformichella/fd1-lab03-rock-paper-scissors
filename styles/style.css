@@ -21,7 +21,7 @@ body {
 header {
     margin: 20px;
 
-    padding: 50px;
+   
     font-size: 5em;
     font-weight: 500;
     
@@ -32,10 +32,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 700px;
+   
 }
 
 header p {
     padding: 10px;
+    cursor: pointer;
 }
 
 .small-text {
@@ -48,16 +51,19 @@ main {
     flex-direction: column;
     align-items: center;
 
-    padding: 50px;
+    padding: 40px;
     background-color: white;
     border: solid 1px darkgray;
     border-radius: 1em;
 
-    height: 500px;
+    height: 500px; 
+    width: 760px; 
+
 }
 
 main section {
     padding: 20px;
+
 }
 
 section span {
@@ -65,7 +71,12 @@ section span {
 }
 
 img {
-    max-height: 120px;
+    height: 120px;
+    margin: 20px;
+    color: darkcyan;
+    border: solid 3px darkcyan;
+    border-radius: 1em;
+    padding: 5px;
 }
 
 input[type="radio"] {
@@ -107,8 +118,14 @@ input[type="radio"]:checked + img {
 
 p span {
     text-align: center;
+    padding: 10px 0px 
 }
 
 .hidden {
     display: none;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
 }

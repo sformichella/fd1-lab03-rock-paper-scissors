@@ -9,6 +9,7 @@ import {
 let wins = 0;
 let draws = 0;
 let total = 0;
+let resets = 0;
 
 
 // DOM Elements
@@ -20,6 +21,7 @@ let winPercent = document.getElementById('win-percentage');
 
 let messageElement = document.getElementById('win-or-lose-message');
 let computerMessage = document.getElementById('computer-throw-message');
+let resetSpan = document.getElementById('resets');
 
 
 // Click Handlers
@@ -34,9 +36,9 @@ export function submitButtonHandler() {
     const winOrLose = doesUserWin(userThrow, computerThrow);
 
 
-    if (winOrLose === 'win' ) {
+    if (winOrLose === 'win') {
         handleUserWins();
-    };
+    }
     if (winOrLose === 'loss') {
         handleUserLoses();
     }
@@ -47,17 +49,19 @@ export function submitButtonHandler() {
     total ++;
 
     displayComputerThrow(computerThrow);
-    updateDOM()
+    updateDOM();
 }
 
 export function resetButtonHandler() {
     wins = 0;
     draws = 0;
     total = 0;
+    resets++;
 
     winsSpan.textContent = 'Wins: 0';
     lossesSpan.textContent = 'Losses: 0';
     drawsSpan.textContent = 'Draws: 0';
+    resetSpan.textContent = `Resets: ${resets}`;
     winPercent.textContent = 'Win-percentage: 0%';
 
     messageElement.textContent = '';
@@ -71,7 +75,7 @@ function updateDOM() {
     winsSpan.textContent = `Wins: ${wins}`;
     lossesSpan.textContent = `Losses: ${total - wins - draws}`;
     drawsSpan.textContent = `Draws: ${draws}`;
-    winPercent.textContent = `Win-percentage: ${Math.floor(wins/total * 100)}%`;
+    winPercent.textContent = `Win-percentage: ${Math.floor(wins / total * 100)}%`;
 }
 
 function displayComputerThrow(computerChoice) {
