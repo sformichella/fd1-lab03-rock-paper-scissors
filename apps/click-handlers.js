@@ -26,7 +26,6 @@ let computerMessage = document.getElementById('computer-throw-message');
 
 export function submitButtonHandler() {
     const computerThrow = getRandomThrow();
-    console.log(computerThrow);
 
     const checkedChoice = document.querySelector(':checked');
     const userThrow = checkedChoice.value;
@@ -35,19 +34,19 @@ export function submitButtonHandler() {
 
 
     if (winOrLose === 'win' ) {
-        handleUserWins();
+        displayUserWins();
     };
     if (winOrLose === 'loss') {
-        handleUserLoses();
+        displayUserLoses();
     }
     if (winOrLose === 'draw') {
-        handleDraw();
+        displayDraw();
     }
 
     total ++;
 
     displayComputerThrow(computerThrow);
-    updateDOM()
+    updateDisplaySpans();
 }
 
 export function resetButtonHandler() {
@@ -67,7 +66,7 @@ export function resetButtonHandler() {
 
 // DOM Functions
 
-function updateDOM() {
+function updateDisplaySpans() {
     winsSpan.textContent = `Wins: ${wins}`;
     lossesSpan.textContent = `Losses: ${total - wins - draws}`;
     drawsSpan.textContent = `Draws: ${draws}`;
@@ -89,16 +88,16 @@ function displayComputerThrow(computerChoice) {
 
 // Outcome Handlers
 
-function handleUserWins() {
+function displayUserWins() {
     wins ++;
     messageElement.textContent = "Congratulations! You've won!";
 }
 
-function handleUserLoses() {
+function displayUserLoses() {
     messageElement.textContent = 'You Lost. Try again?';
 }
 
-function handleDraw() {
+function displayDraw() {
     draws ++;
     messageElement.textContent = 'Whoa! A Draw!';
 }

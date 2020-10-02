@@ -14,17 +14,18 @@ export function getRandomThrow() {
 
 
 export function doesUserWin(playerOneThrow, playerTwoThrow) {
+    const choices = ['rock', 'paper', 'scissors'];
+    
+    const playerOneNum = choices.indexOf(playerOneThrow);
+    const playerTwoNum = choices.indexOf(playerTwoThrow);
 
-    const myArray = ['rock', 'paper', 'scissors'];
-
-    const playerOneNum = myArray.indexOf(playerOneThrow);
-    const playerTwoNum = myArray.indexOf(playerTwoThrow);
-
+    const playerOneNext = (playerOneNum + 1) % choices.length;
+  
 
     if (playerOneThrow === playerTwoThrow) {
         return 'draw';
     }
-    else if ( (playerOneNum + 1) % 3 === playerTwoNum) {
+    else if (playerOneNext === playerTwoNum) {
         return 'loss';
     }
     else {
